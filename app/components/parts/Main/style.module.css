@@ -1,0 +1,9 @@
+.main {
+    grid-area: main;
+    min-height: 100vh;
+    padding: 30px;
+    padding-right: 130px;
+    background: rgba(var(--secondColor-rgb), 1);
+    width: 100vw;
+
+}

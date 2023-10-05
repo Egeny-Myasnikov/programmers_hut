@@ -1,0 +1,47 @@
+.logoWrap {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 6px 6px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-invert);
+}
+
+.logo {
+    --logo-size: clamp(30px, 4.5vw, 40px);
+    fill: rgba(var(--secondColor-rgb), 1);
+    width: var(--logo-size);
+    height: var(--logo-size);
+    overflow: visible;
+
+}
+
+
+
+.titleBlock {
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+
+}
+
+.title {
+    display: block;
+    padding: 2px;
+    font-size: 26px;
+    color: rgba(var(--secondColor-rgb), 1);
+    overflow: hidden;
+    max-width: max-content;
+    width: 100%;
+}
+
+/* Mobile -- 700px*/
+@media (max-width: 700px) {
+
+    .title {
+        display: none;
+
+    }
+}
