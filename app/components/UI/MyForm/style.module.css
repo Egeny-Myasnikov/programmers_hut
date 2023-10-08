@@ -1,6 +1,9 @@
 .form {
-    display: grid;
-    width: clamp(300px, 30vw, 50vw);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    width: 100%;
     padding: clamp(10px, 2vw, 30px);
     background: rgba(255, 255, 255, 0.2);
     border-radius: var(--border-radius-lg);
@@ -8,32 +11,17 @@
     font-size: 1.2em;
     gap: 20px;
     backdrop-filter: blur(3px);
-
 }
 
-.label {
-    display: grid;
+.fieldset {
+    padding: 30px 10px 20px 10px;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-}
-
-.field {
-    font-size: 1em;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, .6);
     border-radius: var(--border-radius-lg);
-    padding: 15px;
-    overflow: hidden;
-    transition: var(--transition);
 }
 
-.field::placeholder {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 1em;
-    transition: var(--transition);
-}
-
-.field:focus::placeholder {
-    transform: translate(100%, 0px);
-    color: rgba(255, 255, 255, 0);
-    font-size: 0em;
+.legend {
+    padding: 10px;
 }

@@ -1,0 +1,22 @@
+.btn {
+    --color-alfa: 1;
+    background-position: 0 0;
+    background: linear-gradient(341deg,
+            rgba(var(--color-green-light--rgb), var(--color-alfa))46%,
+            rgba(var(--color-green-dark--rgb), var(--color-alfa))47%,
+            rgba(var(--color-blue-light--rgb), var(--color-alfa))49%,
+            rgba(var(--color-blue-dark--rgb), var(--color-alfa))52%) fixed;
+    padding: 15px 30px;
+    border-radius: var(--border-radius-lg);
+    border: none;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: var(--transition);
+
+}
+
+.btn:hover {
+    background-position: -50px -10px;
+
+}

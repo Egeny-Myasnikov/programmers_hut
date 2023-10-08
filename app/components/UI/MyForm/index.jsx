@@ -1,24 +1,32 @@
 'use client'
+import { MyField } from '../MyField'
 import s from './style.module.css'
 
-export const MyForm = () => {
+export const MyForm = ({ children, legend, className }) => {
     return (
-        <form className={`${s.form}`}>
-            <label className={s.label}>
-                text
-                <input className={s.field} type="text" placeholder='text' />
-            </label>
+        <>
+            {
+                legend ?
+                    (
+                        <form className={`${s.form} ${className}`}>
+                            <fieldset className={`${s.fieldset}`}>
+                                <legend className={s.legend}>{legend}</legend>
+                                {children}
+                            </fieldset>
+                        </form>
+                    ) :
+                    (
+                        <form className={`${s.form}  ${className}`}>
+                            {children}
+                        </form>
+                    )
+            }
+        </>
 
-            <label className={s.label}>
-                number
-                <input className={s.field} type="number" placeholder='number' />
-            </label>
 
-            <label className={s.label}>
-                select
-                <input className={s.field} type="text" placeholder='select' />
-            </label>
 
-        </form>
+
+
+
     )
 }

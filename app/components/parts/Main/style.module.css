@@ -3,12 +3,11 @@
     grid-area: main;
     min-height: 100vh;
     padding: 30px;
-    padding-right: 130px;
     /* background: rgba(var(--secondColor-rgb), .8); */
     background: linear-gradient(340deg,
             rgba(var(--color-green-light--rgb), var(--color-alfa)),
             rgba(var(--color-green-dark--rgb), var(--color-alfa)),
             rgba(var(--color-blue-light--rgb), var(--color-alfa)),
             rgba(var(--color-blue-dark--rgb), var(--color-alfa))) fixed;
-    width: 100vw;
+    width: 100%;
 }

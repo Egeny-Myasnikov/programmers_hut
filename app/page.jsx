@@ -1,4 +1,6 @@
 // import Image from 'next/image'
+import { MyButton } from './components/UI/MyButton'
+import { MyField } from './components/UI/MyField'
 import { MyForm } from './components/UI/MyForm'
 import { Footer } from './components/parts/Footer'
 import { Header } from './components/parts/Header'
@@ -11,7 +13,13 @@ export default function Home() {
       <Header />
       <Main>
         <h1>Привет!</h1>
-        <MyForm />
+        <MyForm >
+          <MyField placeholder='Text' type='text' />
+          <MyField placeholder='Text 2' type='text' />
+          <MyField placeholder='Number' type='number' />
+          <MyField labelText='Пароль' placeholder='Password' type='password' />
+          <MyButton>Кнопка</MyButton>
+        </MyForm>
       </Main>
       <Footer />
     </MainWrapper>
