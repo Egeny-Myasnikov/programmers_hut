@@ -1,11 +1,14 @@
 .mainWrapper {
     display: grid;
+    justify-content: start;
     grid-template-areas: 'header main'
         'header footer';
+    grid-template-columns: auto 1fr;
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: relative;
-    background: fixed center / cover no-repeat url('./../../../../public/images/bg.jpg');
+    background: no-repeat url('./../../../../public/images/bg.jpg'), #0E121B;
+    background-size: 100% auto;
 }
 
 /* Mobile -- 700px */
