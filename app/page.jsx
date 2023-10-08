@@ -1,9 +1,9 @@
 // import Image from 'next/image'
+import { MyForm } from './components/UI/MyForm'
 import { Footer } from './components/parts/Footer'
 import { Header } from './components/parts/Header'
 import { Main } from './components/parts/Main'
 import { MainWrapper } from './components/parts/MainWrapper'
-import Loading from './loading'
 
 export default function Home() {
   return (
@@ -11,6 +11,7 @@ export default function Home() {
       <Header />
       <Main>
         <h1>Привет!</h1>
+        <MyForm />
       </Main>
       <Footer />
     </MainWrapper>

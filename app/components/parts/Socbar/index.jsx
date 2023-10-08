@@ -36,7 +36,6 @@ export const Socbar = () => {
             <button
                 onClick={openSocbar}
                 className={`${s.icoBtn} ${s.socbarBtn} `}>
-                {/* <SVGSprite className={s.ico} id='share' /> */}
             </button>
         </div>
     )
