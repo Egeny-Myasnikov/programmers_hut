@@ -21,10 +21,7 @@
     transition: var(--transition);
 }
 
-.icoBtn:hover {
-    background: rgba(255, 255, 255, .7);
-    transition: var(--transition);
-}
+
 
 .ico {
     width: 30px;
@@ -34,9 +31,7 @@
     transition: var(--transition);
 }
 
-.icoBtn:hover .ico {
-    fill: rgba(var(--color-green-light--rgb), 1);
-}
+
 
 .socbarBtn {
     position: relative;
@@ -58,10 +53,7 @@
     transition: var(--transition);
 }
 
-.socbarBtn:hover::before {
-    --color: rgba(var(--color-green-light--rgb), 1);
 
-}
 
 .socbarBtn::after {
     cursor: default;
@@ -129,11 +121,33 @@
     transition: 0s;
 }
 
-.icoTitle:hover::after {
-    transform: rotate(-10deg);
-    visibility: visible;
-    transition: var(--transition);
-    top: -70%;
+
+@media (hover: hover) and (pointer: fine) {
+
+
+
+    .icoBtn:hover {
+        background: rgba(255, 255, 255, .7);
+        transition: var(--transition);
+    }
+
+
+    .icoBtn:hover .ico {
+        fill: rgba(var(--color-green-light--rgb), 1);
+    }
+
+
+    .socbarBtn:hover::before {
+        --color: rgba(var(--color-green-light--rgb), 1);
+
+    }
+
+    .icoTitle:hover::after {
+        transform: rotate(-10deg);
+        visibility: visible;
+        transition: var(--transition);
+        top: -70%;
+    }
 }
 
 /* Mobile -- 700px*/
@@ -142,6 +156,15 @@
         gap: 10px;
         flex-direction: row;
         align-items: center;
+    }
+
+    .socbar {
+        transform: translate(90%, 0%) scale(0);
+        border-radius: 5px;
+    }
+
+    .socbar.visible {
+        transform: translate(90%, -140%) scale(1);
     }
 
     .ico {
@@ -155,20 +178,27 @@
     }
 }
 
+
 /* Mobile -- 320px*/
 @media (max-width: 370px) {
     .socbarWrap {
         gap: 5px;
-        flex-direction: row;
     }
 
     .ico {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
 
     .icoBtn {
         width: 40px;
         height: 40px;
+    }
+
+    .socbarBtn::before {
+        width: 5px;
+        height: 5px;
+
+        box-shadow: -10px 0px 0px var(--color), 10px 0px 0px var(--color);
     }
 }

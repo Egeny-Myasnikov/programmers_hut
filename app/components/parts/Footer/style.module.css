@@ -10,3 +10,10 @@
     align-items: center;
     gap: 20px;
 }
+
+/* Mobile -- 700px*/
+@media (max-width: 700px) {
+    .footer {
+        display: none;
+    }
+}

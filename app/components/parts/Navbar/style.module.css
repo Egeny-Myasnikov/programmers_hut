@@ -16,8 +16,10 @@
     transition: var(--transition);
 }
 
-.navLink:hover {
-    letter-spacing: 4px;
+@media (hover: hover) and (pointer: fine) {
+    .navLink:hover {
+        letter-spacing: 4px;
+    }
 }
 
 .icoWrap {
@@ -42,12 +44,16 @@
     transition: var(--transition);
 }
 
-.navLink:hover .icoWrap {
-    background: rgba(255, 255, 255, 0.5);
-}
+@media (hover: hover) and (pointer: fine) {
+    .navLink:hover .icoWrap {
+        background: rgba(255, 255, 255, 0.5);
+    }
 
-.navLink:hover .ico {
-    fill: rgba(0, 0, 0, 0.6);
+
+    .navLink:hover .ico {
+        fill: rgba(0, 0, 0, 0.6);
+    }
+
 }
 
 /* Mobile -- 700px*/

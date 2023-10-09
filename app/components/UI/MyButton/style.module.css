@@ -16,7 +16,9 @@
     font-size: 1.2em;
 }
 
-.btn:hover {
-    background-size: 100% 100%;
-    transition: var(--transition);
+@media (hover: hover) and (pointer: fine) {
+    .btn:hover {
+        background-size: 100% 100%;
+        transition: var(--transition);
+    }
 }

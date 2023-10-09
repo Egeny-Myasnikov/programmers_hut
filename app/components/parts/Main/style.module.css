@@ -1,19 +1,16 @@
 .main {
-    --color-alfa: .6;
-    grid-area: main;
-    min-height: 100vh;
-    padding: 30px;
-    /* background: linear-gradient(340deg,
-            rgba(var(--color-green-light--rgb), var(--color-alfa)),
-            rgba(var(--color-green-dark--rgb), var(--color-alfa)),
-            rgba(var(--color-blue-light--rgb), var(--color-alfa)),
-            rgba(var(--color-blue-dark--rgb), var(--color-alfa))) fixed; */
-    background-image: linear-gradient(to right bottom,
-            rgba(var(--color-green-light--rgb), var(--color-alfa))0%,
-            rgba(var(--color-green-dark--rgb), var(--color-alfa))60%,
-            rgba(var(--color-blue-light--rgb), var(--color-alfa))80%,
-            rgba(var(--color-blue-dark--rgb), var(--color-alfa))100%);
-    background-attachment: fixed;
-    width: 100%;
+        --color-alfa: .6;
+        grid-area: main;
+        min-height: 100vh;
+        padding: 30px;
+        background-image: linear-gradient(to right bottom,
+                        rgba(var(--color-green-light--rgb), var(--color-alfa))0%,
+                        rgba(var(--color-green-dark--rgb), var(--color-alfa))60%,
+                        rgba(var(--color-blue-light--rgb), var(--color-alfa))80%,
+                        rgba(var(--color-blue-dark--rgb), var(--color-alfa))100%);
+        width: 100%;
 
 }
+
+/* Mobile -- 700px*/
+@media (max-width: 700px) {}

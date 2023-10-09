@@ -65,8 +65,12 @@
 
 }
 
+
+
+@media (hover: hover) and (pointer: fine) {
 .toggleBtn:hover {
-    transform: translate(50%, -50%);
+        transform: translate(50%, -50%);
+    }
 }
 
 .wrapper.expanded .toggleBtn {
@@ -75,8 +79,11 @@
     transform: rotate(180deg) translateX(0%);
 }
 
+
+@media (hover: hover) and (pointer: fine) {
 .wrapper.expanded .toggleBtn:hover {
-    transform: rotate(180deg) translateX(30%);
+        transform: rotate(180deg) translateX(30%);
+    }
 }
 
 /* Mobile -- 700px*/
