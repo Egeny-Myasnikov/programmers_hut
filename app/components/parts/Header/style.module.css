@@ -67,8 +67,8 @@
 
 
 
-@media (hover: hover) and (pointer: fine) {
-.toggleBtn:hover {
+@media (hover: hover) {
+    .toggleBtn:hover {
         transform: translate(50%, -50%);
     }
 }
@@ -80,8 +80,8 @@
 }
 
 
-@media (hover: hover) and (pointer: fine) {
-.wrapper.expanded .toggleBtn:hover {
+@media (hover: hover) {
+    .wrapper.expanded .toggleBtn:hover {
         transform: rotate(180deg) translateX(30%);
     }
 }
@@ -111,6 +111,10 @@
     }
 
     .toggleBtn {
+        display: none;
+    }
+
+    .titleBlock {
         display: none;
     }
 }

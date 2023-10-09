@@ -14,6 +14,10 @@
 /* Mobile -- 700px*/
 @media (max-width: 700px) {
     .footer {
-        display: none;
+        height: 180px;
+        padding-bottom: 80px;
+        justify-content: start;
     }
+
+
 }
