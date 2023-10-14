@@ -1,0 +1,56 @@
+.cSelect {
+    cursor: pointer;
+    width: max-content;
+    height: max-content;
+    font-size: 1em;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius-lg);
+    padding: 15px;
+    position: relative;
+}
+
+.title {
+    display: inline-block;
+    width: 100%;
+}
+
+.cSelect::after {
+    content: '\276F';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    transition: var(--transition);
+}
+
+.cSelect.open::after {
+    transform: translate(-50%, -50%) rotate(270deg);
+}
+
+.options {
+    display: grid;
+    gap: 1px;
+    height: 0;
+    transform: scaleY(0);
+    transition: var(--transition);
+}
+
+.options .item {
+    padding: 15px;
+    background: linear-gradient(45deg, rgba(var(--color-green-light--rgb), .8), rgba(var(--color-blue-light--rgb), .8));
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius-lg);
+}
+
+.options .item:first-child {
+    margin-top: 17px;
+}
+
+.options .item:last-child {
+    border-bottom: none;
+}
+
+.cSelect.open .options {
+    transform: scaleY(1);
+}

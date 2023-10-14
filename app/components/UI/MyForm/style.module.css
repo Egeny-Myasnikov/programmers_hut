@@ -1,5 +1,6 @@
 .form {
     display: flex;
+    flex: 1 1 auto;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-end;
@@ -16,6 +17,7 @@
 .fieldset {
     padding: 30px 10px 20px 10px;
     display: flex;
+    flex: 1 1 auto;
     flex-direction: column;
     gap: 10px;
     border: 1px solid rgba(255, 255, 255, .6);

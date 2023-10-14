@@ -15,15 +15,11 @@ export const Header = () => {
                     onClick={() => setVisible(!visible)}
                     className={s.toggleBtn}
                 >
-
                 </button>
                 <Logo className={s.titleBlock} />
                 <Socbar />
                 <Navbar />
-
             </div>
-
-
         </header>
     )
 }

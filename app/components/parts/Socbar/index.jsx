@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 import Link from 'next/link'
 import s from './style.module.css'
 import { SVGSprite } from '../../UI/SVGSprite'
@@ -26,8 +26,8 @@ export const Socbar = () => {
 
             <div className={`${s.socbar} ${socbarVisible ? s.visible : ''} `}>
                 {
-                    links.map(({ icon, link, linkName }) => (
-                        <Link className={`${s.icoBtn}  ${s.icoTitle}`} title={linkName} href={link} >
+                    links.map(({ icon, link, linkName }, idx) => (
+                        <Link className={`${s.icoBtn}  ${s.icoTitle}`} title={linkName} href={link} key={{ idx }}>
                             <SVGSprite className={s.ico} id={icon} />
                         </Link>
                     ))
