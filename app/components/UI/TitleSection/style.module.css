@@ -1,0 +1,55 @@
+.title {
+    text-transform: uppercase;
+    width: fit-content;
+    font-size: clamp(2.5em, 10vw, 4em);
+    background: linear-gradient(180deg,
+            var(--color-optional),
+            var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--font-mono);
+    letter-spacing: .3em;
+    position: relative;
+    padding: 10px;
+}
+
+.title::before,
+.title::after {
+    content: '';
+    background: linear-gradient(90deg,
+            var(--color-optional),
+            var(--color-secondary));
+    width: clamp(20%, 35vw, 150%);
+    height: 4px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+}
+
+.title::after {
+    left: 100%;
+}
+
+.title::before {
+    left: 0;
+    bottom: 0;
+    top: 100%;
+}
+
+/* Mobile -- 700px*/
+@media (max-width: 700px) {
+    .title {
+        letter-spacing: .2em;
+    }
+
+    .title::before,
+    .title::after {
+        width: clamp(10%, 7vw, 100%);
+    }
+
+    .title::after {
+        top: 0;
+        left: 90%;
+    }
+}

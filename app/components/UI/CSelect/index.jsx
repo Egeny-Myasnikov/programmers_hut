@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import s from './style.module.css'
 
-export const CSelect = ({ options, defaultText = 'Выберете' }) => {
+export const CSelect = ({ options, defaultText = 'Выберете', textLabel }) => {
     const optionsRef = useRef(null)
     const [isOpen, setIsOpen] = useState(false)
     const [selectTitle, setSelectTitle] = useState(defaultText)
@@ -26,17 +26,20 @@ export const CSelect = ({ options, defaultText = 'Выберете' }) => {
     }, [isOpen])
 
     return (
-        <div onClick={() => setIsOpen(!isOpen)} className={`cSelect ${s.cSelect} ${isOpen ? s.open : ''}`}>
-            <span
-                className={`cSelect ${s.title}`}
-            > {selectTitle} </span>
-            <ul ref={optionsRef} className={`${s.options} `}>
-                {
-                    options.map((option, idx) => (
-                        <li className={`${s.item}`} key={idx} onClick={(e) => optionText(e)}>{option}</li>
-                    ))
-                }
-            </ul>
-        </div>
+        <label className={s.label}>
+            {textLabel}
+            <div onClick={() => setIsOpen(!isOpen)} className={`cSelect ${s.cSelect} ${isOpen ? s.open : ''}`}>
+                <span
+                    className={`cSelect ${s.title}`}
+                > {selectTitle} </span>
+                <ul ref={optionsRef} className={`${s.options} `}>
+                    {
+                        options.map((option, idx) => (
+                            <li className={`${s.item}`} key={idx} onClick={(e) => optionText(e)}>{option}</li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </label>
     )
 }
