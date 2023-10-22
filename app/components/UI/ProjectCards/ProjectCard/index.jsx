@@ -1,8 +1,8 @@
+import { formatToRU } from '@/app/helpers/currency.helper'
+import { MySlider } from '../../MySlider'
+import { SVGSprite } from '../../SVGSprite'
 import s from './style.module.css'
 import Link from 'next/link'
-import { SVGSprite } from '@/UI/SVGSprite'
-import { MySlider } from '@/UI/MySlider'
-import { formatToRU } from '@/app/helpers/currency.helper'
 
 
 export const ProjectCard = ({ projectImg, projectTitle, cost, period, description, links }) => {

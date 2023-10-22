@@ -1,8 +1,8 @@
 'use client'
 import { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import s from './style.module.css'
-import { MyButton } from '@/UI/MyButton'
 import { ContextProjectCards } from '../../Context'
+import { MyButton } from '../MyButton'
 
 
 export const Filter = ({ textButton, filterElement }) => {

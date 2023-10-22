@@ -1,8 +1,8 @@
 'use client'
 import Link from 'next/link'
 import s from './style.module.css'
-import { SVGSprite } from '@/UI/SVGSprite'
 import { useState } from 'react'
+import { SVGSprite } from '../../UI/SVGSprite'
 
 
 export const Socbar = () => {

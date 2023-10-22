@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react'
 import s from './style.module.css'
-import { Logo } from '@/UI/Logo'
-import { Navbar } from '@/parts/Navbar'
-import { Socbar } from '@/parts/Socbar'
+import { Logo } from '../../UI/Logo'
+import { Socbar } from '../Socbar'
+import { Navbar } from '../Navbar'
 
 export const Header = () => {
     const [visible, setVisible] = useState(false)

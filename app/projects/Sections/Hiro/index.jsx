@@ -1,11 +1,11 @@
 'use client'
+import { ContextProjectCards } from '@/app/components/Context'
 import s from './style.module.css'
-import { ProjectCards } from '@/UI/ProjectCards'
-import { Filter } from '@/UI/Filter'
-import { typeSites } from '@/app/LocalStore/typeSites'
-import { projects } from '@/LocalStore/projects'
 import { useContext } from 'react'
-import { ContextProjectCards } from '../../../components/Context'
+import { Filter } from '@/app/components/UI/Filter'
+import { ProjectCards } from '@/app/components/UI/ProjectCards'
+import { projects } from '@/app/LocalStore/projects'
+import { typeSites } from '@/app/LocalStore/typeSites'
 
 
 

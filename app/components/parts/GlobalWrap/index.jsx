@@ -1,7 +1,7 @@
-import { MainWrapper } from '@/parts/MainWrapper'
-import { Footer } from "@/parts/Footer"
-import { Header } from "@/parts/Header"
-import { Main } from '@/parts/Main'
+import { Main } from "next/document"
+import { Header } from "../Header"
+import { MainWrapper } from "../MainWrapper"
+import { Footer } from "../Footer"
 
 export const GlobalWrap = ({ children }) => {
     return (

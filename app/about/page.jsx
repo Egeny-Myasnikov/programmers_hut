@@ -1,6 +1,5 @@
-// import Image from 'next/image'
-import { TitleSection } from '@/UI/TitleSection'
-import { GlobalWrap } from '@/parts/GlobalWrap'
+import { TitleSection } from "../components/UI/TitleSection"
+import { GlobalWrap } from "../components/parts/GlobalWrap"
 
 export const metadata = {
   title: 'Обо мне. Веб разработчик фрилансер Мясников Евгений',

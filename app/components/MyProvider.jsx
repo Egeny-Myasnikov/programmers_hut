@@ -1,7 +1,7 @@
 'use client'
 import { useState } from "react"
+import { projects } from "../LocalStore/projects"
 import { ContextProjectCards } from "./Context"
-import { projects } from '@/LocalStore/projects'
 
 export const MyProvider = ({ children }) => {
 

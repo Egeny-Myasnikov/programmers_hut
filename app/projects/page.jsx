@@ -1,6 +1,7 @@
-import { GlobalWrap } from '@/parts/GlobalWrap'
+// import { GlobalWrap } from '@/parts/GlobalWrap'
+import { TitleSection } from '../components/UI/TitleSection'
+import { GlobalWrap } from '../components/parts/GlobalWrap'
 import { HiroBlock } from './Sections/Hiro'
-import { TitleSection } from '@/UI/TitleSection'
 export const metadata = {
   title: 'Проекты. Портфолио. Веб разработчик фрилансер Мясников Евгений',
   description: 'Создание сайтов в Ангарске. Веб разработчик фрилансер Мясников Евгений',
