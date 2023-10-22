@@ -1,13 +1,14 @@
-'use client'
-import { MyForm } from '@/app/components/UI/MyForm'
+import { MyForm } from '@/UI/MyForm'
 import s from './style.module.css'
-import { MyField } from '@/app/components/UI/MyField'
-import { CSelect } from '@/app/components/UI/CSelect'
-import { MyButton } from '@/app/components/UI/MyButton'
+import { CSelect } from '@/UI/CSelect'
+import { MyButton } from '@/UI/MyButton'
+import { MyField } from '@/UI/MyField'
+import { typeSites } from '@/LocalStore/typeSites'
+
 
 
 export const HiroBlock = () => {
-    const options = ['Лендинг', 'Интернет магазин', 'Каталог', 'Одностраничный сайт']
+    const typeSitesOptions = typeSites
 
     return (
         <section className={s.hiro}>
@@ -21,12 +22,13 @@ export const HiroBlock = () => {
             <p className={s.title}>Какой сайт будем делать?</p>
 
             <MyForm>
-                <MyField placeholder='Text' type='text' />
-                <MyField placeholder='Text 2' type='text' />
-                <CSelect options={options} defaultText='Выбрать' textLabel='Тип сайта' />
-                <MyField labelText='Пароль' placeholder='Password' type='password' />
+                <CSelect options={typeSitesOptions} defaultText='Выбрать' textLabel='Тип сайта' />
+                <MyField placeholder={'Например 10000'} type={'number'} labelText={'Бюджет'} />
                 <MyButton>Кнопка</MyButton>
             </MyForm>
+
+
+
 
         </section>
     )

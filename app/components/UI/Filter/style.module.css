@@ -1,0 +1,18 @@
+.filter {
+    margin-top: 50px;
+}
+
+.filterLst {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 700px) {
+    .filterLst {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}

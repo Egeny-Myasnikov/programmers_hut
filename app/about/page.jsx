@@ -1,17 +1,16 @@
 // import Image from 'next/image'
-import { Footer } from '../components/parts/Footer'
-import { Header } from '../components/parts/Header'
-import { Main } from '../components/parts/Main'
-import { MainWrapper } from '../components/parts/MainWrapper'
+import { TitleSection } from '@/UI/TitleSection'
+import { GlobalWrap } from '@/parts/GlobalWrap'
+
+export const metadata = {
+  title: 'Обо мне. Веб разработчик фрилансер Мясников Евгений',
+  description: 'Создание сайтов в Ангарске. Веб разработчик фрилансер Мясников Евгений',
+}
 
 export default function About() {
   return (
-    <MainWrapper>
-      <Header />
-      <Main>
-        <h1>About me</h1>
-      </Main>
-      <Footer />
-    </MainWrapper>
+    <GlobalWrap>
+      <TitleSection>Обо мне</TitleSection>
+    </GlobalWrap>
   )
 }

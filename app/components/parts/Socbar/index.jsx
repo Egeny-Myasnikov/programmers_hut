@@ -1,11 +1,11 @@
-// 'use client'
+'use client'
 import Link from 'next/link'
 import s from './style.module.css'
-import { SVGSprite } from '../../UI/SVGSprite'
+import { SVGSprite } from '@/UI/SVGSprite'
 import { useState } from 'react'
+
+
 export const Socbar = () => {
-
-
     const [socbarVisible, setSocbarVisible] = useState(false)
     const links = [
         { link: 'https://vk.com/fljenya', linkName: 'Я в VK', icon: 'vk' },
@@ -26,8 +26,8 @@ export const Socbar = () => {
 
             <div className={`${s.socbar} ${socbarVisible ? s.visible : ''} `}>
                 {
-                    links.map(({ icon, link, linkName }, idx) => (
-                        <Link className={`${s.icoBtn}  ${s.icoTitle}`} title={linkName} href={link} key={{ idx }}>
+                    links.map(({ icon, link, linkName }) => (
+                        <Link className={`${s.icoBtn}  ${s.icoTitle}`} title={linkName} href={link} key={link}>
                             <SVGSprite className={s.ico} id={icon} />
                         </Link>
                     ))

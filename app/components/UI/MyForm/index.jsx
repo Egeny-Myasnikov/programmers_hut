@@ -1,14 +1,18 @@
 'use client'
-import { MyField } from '../MyField'
 import s from './style.module.css'
 
-export const MyForm = ({ children, legend, className }) => {
+export const MyForm = ({ children, legend, className, onClick }) => {
     return (
-        <>
+        <div>
             {
                 legend ?
                     (
-                        <form className={`${s.form} ${className}`}>
+                        <form
+                            onClick={(e) => {
+                                e.preventDefault()
+                                onClick && onClick()
+                            }}
+                            className={`${s.form} ${className}`}>
                             <fieldset className={`${s.fieldset}`}>
                                 <legend className={s.legend}>{legend}</legend>
                                 {children}
@@ -16,17 +20,16 @@ export const MyForm = ({ children, legend, className }) => {
                         </form>
                     ) :
                     (
-                        <form className={`${s.form}  ${className}`}>
+                        <form
+                            onClick={(e) => {
+                                e.preventDefault()
+                                onClick && onClick()
+                            }}
+                            className={`${s.form}  ${className}`}>
                             {children}
                         </form>
                     )
             }
-        </>
-
-
-
-
-
-
+        </div>
     )
 }

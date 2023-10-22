@@ -2,8 +2,16 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+}
+
+.countCards {
+    margin-top: 20px;
+    font-size: 1.5em;
+    width: 30%;
+    padding: 10px;
+    background: rgba(var(--color-green-light--rgb), .8);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
 }
 
 /* Mobile -- 700px*/

@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import s from './style.module.css'
-import { SVGSprite } from '../../UI/SVGSprite'
+import { SVGSprite } from '@/UI/SVGSprite'
 export const Navbar = () => {
     const links = [
         { link: '/', linkName: 'Главная', icon: 'home' },

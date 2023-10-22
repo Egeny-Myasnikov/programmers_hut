@@ -3,6 +3,7 @@
         grid-area: main;
         min-height: 100vh;
         padding: 30px;
+
         background-image: linear-gradient(to right bottom,
                         rgba(var(--color-green-light--rgb), var(--color-alfa))0%,
                         rgba(var(--color-green-dark--rgb), var(--color-alfa))60%,

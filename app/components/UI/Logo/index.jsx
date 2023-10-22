@@ -1,6 +1,6 @@
 'use client'
 import gsap from 'gsap'
-import { SVGSprite } from '../SVGSprite'
+import { SVGSprite } from '@/UI/SVGSprite'
 import s from './style.module.css'
 import { useEffect, useLayoutEffect, useRef } from 'react'
 

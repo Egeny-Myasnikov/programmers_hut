@@ -6,6 +6,7 @@
     grid-template-columns: auto 1fr;
     min-height: 100vh;
     width: 100%;
+    /* max-width: var(--max-width); */
     position: relative;
     background: no-repeat url('./../../../../public/images/bg.jpg'), #0E121B;
     background-size: 100% auto;
