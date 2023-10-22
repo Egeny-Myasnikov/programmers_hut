@@ -12,6 +12,7 @@
     background: rgba(var(--color-green-light--rgb), .8);
     border-radius: var(--border-radius-lg);
     text-align: center;
+
 }
 
 /* Mobile -- 700px*/
