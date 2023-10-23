@@ -1,5 +1,5 @@
 'use client'
-import { ContextProjectCards } from '@/app/components/Context'
+import { ContextProjectCards } from '@/app/providers/ProjectCardsProvider'
 import s from './style.module.css'
 import { useContext } from 'react'
 import { Filter } from '@/app/components/UI/Filter'

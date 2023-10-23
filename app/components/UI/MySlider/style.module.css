@@ -64,15 +64,17 @@
         background: rgba(var(--color-green-light--rgb), 1);
 
     }
+
+    .sliderWrap:hover .btnControllLeft {
+        transform: translate(0%, 0%);
+    }
+
+    .sliderWrap:hover .btnControllRight {
+        transform: translate(100%, 0%);
+    }
 }
 
-.sliderWrap:hover .btnControllLeft {
-    transform: translate(0%, 0%);
-}
 
-.sliderWrap:hover .btnControllRight {
-    transform: translate(100%, 0%);
-}
 
 
 
@@ -95,5 +97,13 @@
 
     .btnControll {
         font-size: 1em;
+    }
+
+    .btnControllLeft {
+        transform: translate(0%, 0%);
+    }
+
+    .btnControllRight {
+        transform: translate(100%, 0%);
     }
 }

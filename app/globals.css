@@ -65,6 +65,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  color: inherit;
+}
+
 li {
   list-style: none;
 }

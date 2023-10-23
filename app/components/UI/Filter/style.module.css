@@ -12,7 +12,8 @@
         flex-direction: column;
     }
 
-    .btn {
-        width: 100%;
+
+    .btnFilter {
+        width: 50%;
     }
 }

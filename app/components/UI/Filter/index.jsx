@@ -1,8 +1,8 @@
 'use client'
 import { useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import s from './style.module.css'
-import { ContextProjectCards } from '../../Context'
 import { MyButton } from '../MyButton'
+import { ContextProjectCards } from '@/app/providers/ProjectCardsProvider'
 
 
 export const Filter = ({ textButton, filterElement }) => {
@@ -22,16 +22,13 @@ export const Filter = ({ textButton, filterElement }) => {
 
     }
 
-
-
-
     return (
         <div className={s.filter}>
             <ul className={s.filterLst}>
                 {
                     textButton.map(text => (
                         <li key={text} className={s.filterItem}>
-                            <MyButton onClick={filtered} className={s.btn}>{text}</MyButton>
+                            <MyButton onClick={filtered} className={s.btnFilter}>{text}</MyButton>
                         </li>
                     ))
                 }
