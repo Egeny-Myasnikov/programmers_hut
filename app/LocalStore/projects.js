@@ -1,3 +1,4 @@
+'use client'
 import nikasonIMG from '@/public/projects/Nikason/Nikason.png'
 import nikasonIMG2 from '@/public/projects/Nikason/Nikason2.png'
 import nikasonIMG3 from '@/public/projects/Nikason/Nikason3.png'
