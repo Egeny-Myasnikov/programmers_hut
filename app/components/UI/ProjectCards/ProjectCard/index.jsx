@@ -1,13 +1,24 @@
+'use client'
 import { formatToRU } from '@/app/helpers/currency.helper'
 import { MySlider } from '../../MySlider'
 import { SVGSprite } from '../../SVGSprite'
 import s from './style.module.css'
 import Link from 'next/link'
+import gsap from 'gsap'
+import { useLayoutEffect } from 'react'
 
 
 export const ProjectCard = ({ projectImg, projectTitle, cost, period, description, links }) => {
+
+    useLayoutEffect(() => {
+        gsap.fromTo('.cardP', { opacity: 0, translateX: -100 }, { duration: 1.5, opacity: 1, translateX: 0 })
+
+    }, [])
+
+
+
     return (
-        <div className={s.projectCard}>
+        <div className={`${s.projectCard} cardP`} >
             <div className={s.imgWrap}>
                 <MySlider images={projectImg} />
             </div>

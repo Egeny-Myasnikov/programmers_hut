@@ -81,6 +81,35 @@ li {
   display: block;
 }
 
+
+/* transitionGroup */
+.item-enter {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: 500ms ease-in;
+}
+
+.item-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: 500ms ease-in;
+}
+
+.item-exit {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: 500ms ease-in;
+}
+
+.item-exit-active {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: 500ms ease-in;
+}
+
+
+/* transitionGroup */
+
 .loader {
   --mainColor: rgb(68, 0, 101);
   --circleColor: rgb(0, 13, 192);

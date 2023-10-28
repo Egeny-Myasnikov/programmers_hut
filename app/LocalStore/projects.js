@@ -34,6 +34,7 @@ import { typeSites } from './typeSites'
 
 export const projects = [
     {
+        id: 1,
         projectImg: [nikasonIMG, nikasonIMG2, nikasonIMG3, nikasonIMG4, nikasonIMG5],
         projectTitle: 'Столярная мастерская "Nikason"',
         cost: 14000,
@@ -47,6 +48,7 @@ export const projects = [
 
     },
     {
+        id: 2,
         projectImg: [pubgIMG, pubgIMG2, pubgIMG3, pubgIMG4, pubgIMG5, pubgIMG6],
         projectTitle: 'Чит коды для игры "PUBG"',
         cost: 10000,
@@ -59,6 +61,7 @@ export const projects = [
         type: typeSites[1],
     },
     {
+        id: 3,
         projectImg: [simadaIMG, simadaIMG2, simadaIMG3, simadaIMG4, simadaIMG5, simadaIMG6, simadaIMG7],
         projectTitle: 'Салон красоты "Simada"',
         cost: 15000,
@@ -71,6 +74,7 @@ export const projects = [
         type: typeSites[3],
     },
     {
+        id: 4,
         projectImg: [todoListIMG, todoListIMG2, todoListIMG3, todoListIMG4, todoListIMG5],
         projectTitle: 'Список задач',
         cost: null,
@@ -83,6 +87,7 @@ export const projects = [
         type: null,
     },
     {
+        id: 5,
         projectImg: [zamokServiceAngarskIMG, zamokServiceAngarskIMG2, zamokServiceAngarskIMG3, zamokServiceAngarskIMG4, zamokServiceAngarskIMG5],
         projectTitle: 'Служба вскрытия замков',
         cost: 4000,
