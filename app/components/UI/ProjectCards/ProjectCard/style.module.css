@@ -75,6 +75,18 @@
     transition: var(--transition);
 }
 
+.openWindow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20%;
+    height: 20%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: var(--border-radius-big);
+    cursor: pointer;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .ico:hover {
         fill: rgba(var(--color-secondary--rgb), 1);

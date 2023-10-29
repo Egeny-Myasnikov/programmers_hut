@@ -102,30 +102,7 @@
     transform: translate(38.5%, -100%) scale(1);
 }
 
-.icoTitle::after {
-    content: attr(title);
-    position: absolute;
-    left: 50%;
-    right: 0%;
-    top: -50%;
-    width: max-content;
-    visibility: hidden;
-    padding: 7px 10px;
-    border-radius: var(--border-radius-lg);
-    background: rgba(0, 0, 0, .7);
-    box-shadow: var(--shadow-invert);
-    color: #fff;
-    font-size: 1.3em;
-    font-weight: bold;
-    transform: rotate(0deg);
-    transition: 0s;
-}
-
-
-@media (hover: hover){
-
-
-
+@media (hover: hover) {
     .icoBtn:hover {
         background: rgba(255, 255, 255, .7);
         transition: var(--transition);
@@ -140,13 +117,6 @@
     .socbarBtn:hover::before {
         --color: rgba(var(--color-green-light--rgb), 1);
 
-    }
-
-    .icoTitle:hover::after {
-        transform: rotate(-10deg);
-        visibility: visible;
-        transition: var(--transition);
-        top: -70%;
     }
 }
 

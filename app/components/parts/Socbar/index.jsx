@@ -19,7 +19,7 @@ export const Socbar = () => {
 
     return (
         <div className={s.socbarWrap}>
-            <Link className={`${s.icoBtn} ${s.icoTitle}`} title='Позвонить' href='tel:+79501081773' >
+            <Link className={`${s.icoBtn} linkTitle`} title='Позвонить' href='tel:+79501081773' >
                 <SVGSprite className={s.ico} id='phone' />
             </Link>
 
@@ -27,7 +27,7 @@ export const Socbar = () => {
             <div className={`${s.socbar} ${socbarVisible ? s.visible : ''} `}>
                 {
                     links.map(({ icon, link, linkName }) => (
-                        <Link className={`${s.icoBtn}  ${s.icoTitle}`} title={linkName} href={link} key={link}>
+                        <Link className={`${s.icoBtn}  linkTitle`} title={linkName} href={link} key={link}>
                             <SVGSprite className={s.ico} id={icon} />
                         </Link>
                     ))

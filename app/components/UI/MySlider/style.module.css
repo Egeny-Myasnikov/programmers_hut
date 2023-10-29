@@ -70,7 +70,6 @@
     z-index: -1;
     transition: var(--transition);
     transform-origin: center;
-
 }
 
 @media (hover: hover) {

@@ -15,3 +15,16 @@ export const ProjectCardsProvider = ({ children }) => {
 
     )
 }
+export const ContextModaWindow = createContext()
+
+export const ModaWindowProvider = ({ children }) => {
+
+    const [ModaWindow, setModaWindow] = useState([])
+    const [isOpen, setOpen] = useState(false)
+    return (
+        <ContextModaWindow.Provider value={[ModaWindow, setModaWindow, isOpen, setOpen]}>
+            {children}
+        </ContextModaWindow.Provider>
+
+    )
+}

@@ -1,6 +1,6 @@
-export const SVGSprite = ({ id, className }) => {
+export const SVGSprite = ({ id, className, title, onClick }) => {
     return (
-        <svg className={className}>
+        <svg title={title} className={className} onClick={onClick}>
             <use xlinkHref={`icons.svg#${id}`} />
         </svg>
     )

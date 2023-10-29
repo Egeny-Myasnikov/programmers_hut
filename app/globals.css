@@ -81,34 +81,48 @@ li {
   display: block;
 }
 
+/* Link Title */
 
-/* transitionGroup */
-.item-enter {
-  opacity: 0;
-  transform: translateY(-100%);
-  transition: 500ms ease-in;
+.linkTitle {
+  position: relative;
 }
 
-.item-enter-active {
-  opacity: 1;
-  transform: translateY(0%);
-  transition: 500ms ease-in;
+.linkTitle::after {
+  content: attr(title);
+  position: absolute;
+  left: 50%;
+  right: 0%;
+  top: -50%;
+  width: max-content;
+  visibility: hidden;
+  padding: 7px 10px;
+  border-radius: var(--border-radius-lg);
+  background: rgba(0, 0, 0, .7);
+  box-shadow: var(--shadow-invert);
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  transform: rotate(0deg);
+  transition: 0s;
 }
 
-.item-exit {
-  opacity: 1;
-  transform: translateY(0%);
-  transition: 500ms ease-in;
+@media (hover: hover) {
+  .linkTitle:hover::after {
+    transform: rotate(-10deg);
+    visibility: visible;
+    transition: var(--transition);
+    top: -70%;
+  }
+
+  .linkTitle:hover .ico {
+    fill: rgba(var(--color-secondary--rgb), 1);
+  }
 }
 
-.item-exit-active {
-  opacity: 0;
-  transform: translateY(-100%);
-  transition: 500ms ease-in;
-}
+/* /// Link Title */
 
 
-/* transitionGroup */
+
 
 .loader {
   --mainColor: rgb(68, 0, 101);
