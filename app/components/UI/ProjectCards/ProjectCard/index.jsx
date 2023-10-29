@@ -4,21 +4,29 @@ import { MySlider } from '../../MySlider'
 import { SVGSprite } from '../../SVGSprite'
 import s from './style.module.css'
 import Link from 'next/link'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { useLayoutEffect } from 'react'
 
 
 export const ProjectCard = ({ projectImg, projectTitle, cost, period, description, links }) => {
+    const cardRef = useRef()
+    useEffect(() => {
+        gsap.fromTo(cardRef.current, {
+            xPercent: -100,
+            scale: 0,
+            opacity: 0,
+        }, {
+            xPercent: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 1,
+            ease: 'sine',
+        })
 
-    useLayoutEffect(() => {
-        gsap.fromTo('.cardP', { opacity: 0, translateX: -100 }, { duration: 1.5, opacity: 1, translateX: 0 })
-
-    }, [])
-
-
+    })
 
     return (
-        <div className={`${s.projectCard} cardP`} >
+        <div className={`${s.projectCard}`} ref={cardRef}>
             <div className={s.imgWrap}>
                 <MySlider images={projectImg} />
             </div>

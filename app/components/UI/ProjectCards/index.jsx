@@ -4,6 +4,7 @@ import s from './style.module.css'
 
 export const ProjectCards = ({ filteredProjectCards }) => {
 
+
     const countCards = () => {
         switch (filteredProjectCards.length) {
             case 0:
@@ -32,6 +33,7 @@ export const ProjectCards = ({ filteredProjectCards }) => {
 
             {
                 filteredProjectCards.map(({ id, projectImg, projectTitle, cost, period, description, links, }) => (
+
                     <ProjectCard key={id} projectImg={projectImg} projectTitle={projectTitle} cost={cost} period={period} description={description} links={links} />
                 ))
             }
