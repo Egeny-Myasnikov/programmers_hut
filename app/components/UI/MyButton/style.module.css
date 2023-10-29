@@ -13,7 +13,7 @@
     cursor: pointer;
     transition: background var(--transition);
     padding: 15px 30px;
-    font-size: 1.2em;
+    font-size: inherit;
 }
 
 @media (hover: hover) {

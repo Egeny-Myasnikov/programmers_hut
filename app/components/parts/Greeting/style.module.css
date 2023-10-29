@@ -1,0 +1,5 @@
+.field {
+    font-size: .4em;
+    max-width: 200px;
+    display: flex;
+}

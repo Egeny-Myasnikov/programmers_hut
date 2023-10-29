@@ -5,6 +5,7 @@ import { CSelect } from '@/app/components/UI/CSelect'
 import { MyField } from '@/app/components/UI/MyField'
 import { MyButton } from '@/app/components/UI/MyButton'
 import { typeSites } from '@/app/LocalStore/typeSites'
+import { Greeting } from '@/app/components/parts/Greeting'
 
 
 
@@ -13,15 +14,28 @@ export const HiroBlock = () => {
 
     return (
         <section className={s.hiro}>
-            <p className={s.title}>Привет!</p>
-            <p className={s.title}>Меня зовут Евгений</p>
-            <div className={s.title}>Я
-                <h3 className={s.title}> фрилансер</h3>
-                <h2 className={s.title}> веб разработчик</h2>
-            </div>
-            <h1 className={s.title}>Делаю сайты</h1>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className={s.title}> Приветствую <Greeting />!</div>
+
+            <br />
+            <br />
+            <br />
+            <br />
             <p className={s.title}>Какой сайт будем делать?</p>
 
+
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <br />
+            <br />
+            <br />
+            <br />
             <MyForm>
                 <CSelect options={typeSitesOptions} defaultText='Выбрать' textLabel='Тип сайта' />
                 <MyField placeholder={'Например 10000'} type={'number'} labelText={'Бюджет'} />

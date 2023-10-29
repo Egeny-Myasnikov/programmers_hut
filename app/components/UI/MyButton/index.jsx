@@ -6,7 +6,7 @@ export const MyButton = ({ onClick, className, children }) => {
     return (
         <button
             onClick={onClick}
-            className={`${s.btn} ${className}}`}>
+            className={`${className} ${s.btn} }`}>
             {children}
         </button>
     )

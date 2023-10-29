@@ -22,7 +22,6 @@ export const ProjectCard = ({ projectImg, projectTitle, cost, period, descriptio
             duration: 1,
             ease: 'sine',
         })
-
     })
 
     return (
