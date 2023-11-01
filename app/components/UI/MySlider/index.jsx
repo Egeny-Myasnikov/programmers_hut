@@ -9,7 +9,6 @@ export const MySlider = ({ images }) => {
     const [count, setCount] = useState(1);
 
     const moveRight = (e) => {
-        e.preventDefault()
         if (position !== (images.length - 1) * -100) {
             setPosition(position - 100)
             setCount(count + 1)
@@ -18,10 +17,10 @@ export const MySlider = ({ images }) => {
             setCount(1)
 
         }
+        e.preventDefault()
 
     }
     const moveLeft = (e) => {
-        e.preventDefault()
         if (position < 0) {
             setPosition(position + 100)
             setCount(count - 1)
@@ -30,6 +29,7 @@ export const MySlider = ({ images }) => {
             setPosition((images.length - 1) * -100)
             setCount(images.length)
         }
+        e.preventDefault()
     }
 
     // onDrag onDragEnd onDragEnter onDragExit

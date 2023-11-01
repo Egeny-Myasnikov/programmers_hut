@@ -33,8 +33,7 @@ export const ProjectCard = ({ projectImg, projectTitle, cost, period, descriptio
                 <SVGSprite
                     onClick={setImagesToModalWindow}
                     id='fullscreen'
-                    className={`${s.ico} ${s.openWindow} linkTitle`}
-                    title='Открыть'
+                    className={`${s.ico} ${s.openWindow}`}
                 />
                 <MySlider images={projectImg} />
             </div>

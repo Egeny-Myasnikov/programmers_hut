@@ -17,7 +17,7 @@
     min-width: 280px;
     max-width: 80%;
     width: clamp(280px, 50vw, min-content);
-    min-height: 400px;
+    /* min-height: 400px; */
     background: rgba(255, 255, 255, 0.2);
     border-radius: var(--border-radius-lg);
     border: 1px solid rgba(255, 255, 255, .2);

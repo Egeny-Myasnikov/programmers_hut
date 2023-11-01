@@ -1,4 +1,5 @@
 // import { MyForm } from '@/UI/MyForm'
+'use client'
 import { MyForm } from '@/app/components/UI/MyForm'
 import s from './style.module.css'
 import { CSelect } from '@/app/components/UI/CSelect'
@@ -39,7 +40,7 @@ export const HiroBlock = () => {
             <MyForm>
                 <CSelect options={typeSitesOptions} defaultText='Выбрать' textLabel='Тип сайта' />
                 <MyField placeholder={'Например 10000'} type={'number'} labelText={'Бюджет'} />
-                <MyButton>Кнопка</MyButton>
+                <MyButton onClick={() => console.log(1)}>Кнопка</MyButton>
             </MyForm>
 
 

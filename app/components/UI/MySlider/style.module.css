@@ -44,8 +44,8 @@
     cursor: pointer;
     border: none;
     background: rgba(var(--color-green-light--rgb), .5);
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
@@ -72,7 +72,25 @@
     transform-origin: center;
 }
 
-@media (hover: hover) {
+@media (hover: none) and ((pointer: coarse)) {
+    .btnControll {
+        font-size: 1em;
+    }
+
+    .btnControllLeft {
+        transform: translate(10%, -20%);
+    }
+
+    .btnControllRight {
+        transform: translate(150%, -20%);
+    }
+
+}
+
+
+
+
+@media (hover: hover) and (pointer: fine) {
     .btnControll:hover {
         text-shadow: 0px 0px 10px rgba(34, 255, 0, 0.7);
     }
@@ -124,10 +142,6 @@
     .btn {
         width: 50px;
         height: 50px;
-    }
-
-    .btnControll {
-        font-size: 1em;
     }
 
     .btnControllLeft {
