@@ -9,13 +9,16 @@ import { typeSites } from '@/app/LocalStore/typeSites'
 import { Greeting } from '@/app/components/parts/Greeting'
 import { formatToRU } from '@/app/helpers/currency.helper'
 import { useState } from 'react'
+import { InputPhoneMask } from '@/app/components/UI/InputPhoneMask'
 
 
 
 export const HiroBlock = () => {
-    const [value, setValue] = useState('')
-    const [currency, setCurrency] = useState('')
-    const [typeSite, setTypeSite] = useState('')
+    const [message, setMessage] = useState('')
+    const [value, setValue] = useState(null)
+    const [currency, setCurrency] = useState(null)
+    const [phone, setPhone] = useState(null)
+    const [typeSite, setTypeSite] = useState(null)
     const typeSitesOptions = typeSites
 
     return (
@@ -43,7 +46,9 @@ export const HiroBlock = () => {
             <br />
             <br />
             <MyForm>
+                {/* тип сайта */}
                 <CSelect options={typeSitesOptions} setOption={setTypeSite} defaultText='Выбрать' textLabel='Тип сайта' />
+                {/* бюджет */}
                 <MyField
                     value={value}
                     onChange={e => setValue(e.target.value)}
@@ -58,25 +63,51 @@ export const HiroBlock = () => {
                     type={'text'}
                     labelText={'Бюджет'}
                 />
+
+                {/* номер телефона */}
+
+
+                <InputPhoneMask
+                    placeholder={'89501081773'}
+                    labelText={"Ваш номер телефона"}
+                    setPhone={setPhone}
+                />
+
+
+
+
+                {/* кнопка */}
+                <MyButton
+                    onClick={() => {
+                        setMessage(`Данные отправлены`)
+                        setTimeout(() => {
+                            setCurrency(null)
+                            setPhone(null)
+                            setTypeSite(null)
+                            setMessage(null)
+                        }, 3000)
+
+                    }}>Отправить</MyButton>
+
+                {/* все данные */}
+
                 {
-                    (currency || typeSite) && (
-                        <div>
-                            <br />
-                            <div>Тип сайта: {typeSite || 'Не выбран'}</div>
-                            <br />
-                            <div>Бюджет: {currency || 0}</div>
-                            <br />
-                            <br />
-                        </div>
-                    )
+                    !message ?
+                        (currency || typeSite || phone) && (
+                            <div style={{ width: '100%' }}>
+                                <br />
+                                <div>Тип сайта: <span>{typeSite || 'Не выбран'}</span></div>
+                                <br />
+                                <div>Бюджет: <span>{currency || 0}</span></div>
+                                <br />
+                                <div>Телефон: <span>{phone || "Нет телефона"}</span></div>
+
+                            </div>
+                        ) :
+                        <span>{message}</span>
+
 
                 }
-                <MyButton onClick={() => {
-
-                    setTypeSite(typeSite)
-                }}>Отправить</MyButton>
-
-
             </MyForm>
 
 
