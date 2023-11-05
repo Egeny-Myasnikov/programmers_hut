@@ -5,35 +5,30 @@ import { useState } from 'react'
 
 
 export const MySlider = ({ images }) => {
+
     const [position, setPosition] = useState(0);
     const [count, setCount] = useState(1);
 
-    const moveRight = (e) => {
+    const moveRight = () => {
         if (position !== (images.length - 1) * -100) {
             setPosition(position - 100)
             setCount(count + 1)
-        } else {
-            setPosition(0)
-            setCount(1)
-
+            return
         }
-        e.preventDefault()
+        setPosition(0)
+        setCount(1)
 
     }
-    const moveLeft = (e) => {
+    const moveLeft = () => {
         if (position < 0) {
             setPosition(position + 100)
             setCount(count - 1)
-
-        } else {
-            setPosition((images.length - 1) * -100)
-            setCount(images.length)
+            return
         }
-        e.preventDefault()
-    }
+        setPosition((images.length - 1) * -100)
+        setCount(images.length)
 
-    // onDrag onDragEnd onDragEnter onDragExit
-    // onDragLeave onDragOver onDragStart onDrop
+    }
 
     return (
         <div className={s.sliderWrap}>

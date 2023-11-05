@@ -9,17 +9,30 @@
     position: relative;
 }
 
+/* .sliderWrap::-webkit-scrollbar {
+    display: none;
+} */
+
 .sliderContainer {
+    /* overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
     transition: var(--transition);
 }
 
+
+
 .img {
+    /* scroll-snap-align: start;
+    scroll-snap-stop: always; */
     width: 100%;
     height: 100%;
     border-radius: var(--border-radius-lg);
+    transition: var(--transition);
+    cursor: grab;
 }
 
 .count {

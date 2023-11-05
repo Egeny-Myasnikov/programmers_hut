@@ -4,6 +4,7 @@
 
 .filterLst {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -14,6 +15,6 @@
 
 
     .btnFilter {
-        width: 50%;
+        width: 100%;
     }
 }
