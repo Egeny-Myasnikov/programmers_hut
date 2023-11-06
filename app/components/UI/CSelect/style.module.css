@@ -26,12 +26,12 @@
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translate(-50%, -50%) rotate(90deg);
+    transform: translate(-100%, -50%) rotate(90deg);
     transition: var(--transition);
 }
 
 .cSelect.open::after {
-    transform: translate(-50%, -50%) rotate(270deg);
+    transform: translate(-100%, -50%) rotate(270deg);
 }
 
 .options {
@@ -45,8 +45,14 @@
 .options .item {
     padding: 15px;
     background: linear-gradient(45deg, rgba(var(--color-green-light--rgb), .8), rgba(var(--color-blue-light--rgb), .8));
+    background-size: 200%;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: var(--border-radius-lg);
+    transition: var(--transition);
+}
+
+.options .item:hover {
+    background-position-x: 100%;
 }
 
 .options .item:first-child {
@@ -59,4 +65,8 @@
 
 .cSelect.open .options {
     transform: scaleY(1);
+}
+
+.defaultText {
+    opacity: 0.6;
 }

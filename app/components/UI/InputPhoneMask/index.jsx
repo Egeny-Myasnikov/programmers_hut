@@ -1,13 +1,18 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { MyField } from "../MyField"
 
-export const InputPhoneMask = ({ setPhone, labelText, placeholder }) => {
-
+export const InputPhoneMask = ({ setErrorPhone, phone, setPhone, labelText, placeholder }) => {
+    const ERROR_MESSAGE = "Мало цифр..."
     const [value, setValue] = useState('')
 
-    const getInputValues = (input) => input.value.replace(/\D/g, "")
+    useEffect(() => {
+        if (phone === '') setValue('')
+    }, [phone])
+
+
+    const getInputValues = input => input.value.replace(/\D/g, "")
 
     const onPhoneInput = (e) => {
         let input = e.target,
@@ -51,7 +56,7 @@ export const InputPhoneMask = ({ setPhone, labelText, placeholder }) => {
 
     const onPhoneKeyDown = (e) => {
         const input = e.target
-        if (e.keyCode == 8 && getInputValues(input).length == 1) {
+        if (e.key === 'Backspace' && getInputValues(input).length == 1) {
             input.value = ""
         }
     }
@@ -67,10 +72,13 @@ export const InputPhoneMask = ({ setPhone, labelText, placeholder }) => {
         }
     }
     const validate = () => {
+
         if ((value[0] === "+" || value.length < 17) && (value[0] === "8" || value.length < 18)) {
-            setPhone("Мало цифр...")
+            setPhone(ERROR_MESSAGE)
+            setErrorPhone(true)
         } else {
             setPhone(value)
+            setErrorPhone(false)
         }
     }
 

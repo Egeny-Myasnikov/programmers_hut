@@ -1,7 +1,8 @@
 'use client'
+import { forwardRef } from 'react'
 import s from './style.module.css'
 
-export const MyForm = ({ children, legend, className, onClick }) => {
+const MyForm = forwardRef(function MyForm({ children, legend, className = '', onClick }, ref) {
     return (
         <div>
             {
@@ -12,7 +13,8 @@ export const MyForm = ({ children, legend, className, onClick }) => {
                                 e.preventDefault()
                                 onClick && onClick()
                             }}
-                            className={`${s.form} ${className}`}>
+                            className={`${s.form} ${className}`}
+                        >
                             <fieldset className={`${s.fieldset}`}>
                                 <legend className={s.legend}>{legend}</legend>
                                 {children}
@@ -21,6 +23,7 @@ export const MyForm = ({ children, legend, className, onClick }) => {
                     ) :
                     (
                         <form
+                            ref={ref}
                             onClick={(e) => {
                                 e.preventDefault()
                                 onClick && onClick()
@@ -32,4 +35,5 @@ export const MyForm = ({ children, legend, className, onClick }) => {
             }
         </div>
     )
-}
+})
+export default MyForm

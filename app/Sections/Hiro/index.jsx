@@ -1,6 +1,6 @@
 // import { MyForm } from '@/UI/MyForm'
 'use client'
-import { MyForm } from '@/app/components/UI/MyForm'
+import MyForm from '@/app/components/UI/MyForm'
 import s from './style.module.css'
 import { CSelect } from '@/app/components/UI/CSelect'
 import { MyField } from '@/app/components/UI/MyField'
@@ -8,50 +8,71 @@ import { MyButton } from '@/app/components/UI/MyButton'
 import { typeSites } from '@/app/LocalStore/typeSites'
 import { Greeting } from '@/app/components/parts/Greeting'
 import { formatToRU } from '@/app/helpers/currency.helper'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { InputPhoneMask } from '@/app/components/UI/InputPhoneMask'
 
 
 
 export const HiroBlock = () => {
+    const formRef = useRef(null)
     const [message, setMessage] = useState('')
+    const [isErrorMessage, setIsErrorMessage] = useState(true)
     const [value, setValue] = useState('')
     const [currency, setCurrency] = useState('')
     const [phone, setPhone] = useState('')
+    const [errorPhone, setErrorPhone] = useState(false)
     const [typeSite, setTypeSite] = useState('')
     const typeSitesOptions = typeSites
 
+    const sendData = () => {
+        if (typeSite === '') {
+            setMessage('Выберете тип сайта!')
+            setTimeout(() => {
+                setMessage('')
+            }, 3000)
+            return
+        }
+        if (currency === '' || currency === 'не число ₽') {
+            setMessage('Укажите бюджет!')
+            setTimeout(() => {
+                setMessage('')
+            }, 3000)
+            return
+        }
+        if (phone === '' || errorPhone) {
+            setMessage('Укажите номер телефона!')
+            setTimeout(() => {
+                setMessage('')
+            }, 3000)
+            return
+        }
+        setIsErrorMessage(false)
+        setMessage('Данные отправлены!')
+
+        setTimeout(() => {
+            setTypeSite('')
+            setCurrency('')
+            setValue('')
+            setPhone('')
+            setMessage('')
+            setIsErrorMessage(true)
+        }, 3000)
+    }
+
     return (
         <section className={s.hiro}>
-            <br />
-            <br />
-            <br />
-            <br />
+
             <div className={s.title}> Приветствую <Greeting />!</div>
 
-            <br />
-            <br />
-            <br />
-            <br />
             <p className={s.title}>Какой сайт будем делать?</p>
 
-
-            <br />
-            <br />
-            <br />
-            <br />
-
-            <br />
-            <br />
-            <br />
-            <br />
-            <MyForm>
+            <MyForm ref={formRef}>
                 {/* тип сайта */}
-                <CSelect options={typeSitesOptions} setOption={setTypeSite} defaultText='Выбрать' textLabel='Тип сайта' />
+                <CSelect options={typeSitesOptions} typeSite={typeSite} setOption={setTypeSite} defaultText='Выбрать' textLabel='Тип сайта' />
                 {/* бюджет */}
                 <MyField
                     value={value}
-                    onChange={e => setValue(e.target.value)}
+                    onChange={e => setValue(e.target.value.replace(/\D/g, ""))}
                     onBlur={() => {
                         setValue(formatToRU.format(value))
                         setCurrency(formatToRU.format(value))
@@ -59,7 +80,7 @@ export const HiroBlock = () => {
                     onFocus={() => {
                         setValue('')
                     }}
-                    placeholder={`Например ${formatToRU.format('10000')}`}
+                    placeholder={`Например 10000`}
                     type={'text'}
                     labelText={'Бюджет'}
                 />
@@ -71,23 +92,13 @@ export const HiroBlock = () => {
                     placeholder={'89501081773'}
                     labelText={"Ваш номер телефона"}
                     setPhone={setPhone}
+                    phone={phone}
+                    setErrorPhone={setErrorPhone}
                 />
-
-
-
 
                 {/* кнопка */}
                 <MyButton
-                    onClick={() => {
-                        setMessage(`Данные отправлены`)
-                        setTimeout(() => {
-                            setCurrency('')
-                            setPhone('')
-                            setTypeSite('')
-                            setMessage('')
-                        }, 3000)
-
-                    }}>Отправить</MyButton>
+                    onClick={sendData}>Отправить</MyButton>
 
                 {/* все данные */}
 
@@ -96,20 +107,18 @@ export const HiroBlock = () => {
                         (currency || typeSite || phone) && (
                             <div style={{ width: '100%' }}>
                                 <br />
-                                <div>Тип сайта: <span>{typeSite || 'Не выбран'}</span></div>
+                                <div>Тип сайта: <span className={s.options}>{typeSite || 'Не выбран'}</span></div>
                                 <br />
-                                <div>Бюджет: <span>{currency || 0}</span></div>
+                                <div>Бюджет: <span className={s.options}>{currency || 0}</span></div>
                                 <br />
-                                <div>Телефон: <span>{phone || "Нет телефона"}</span></div>
-
+                                <div>Телефон: <span className={s.options}>{phone || "Нет телефона"}</span></div>
                             </div>
                         ) :
-                        <span>{message}</span>
+                        <span className={`${s.message} ${isErrorMessage ? s.messageError : s.messageAllowed} `}>{message}</span>
 
 
                 }
             </MyForm>
-
 
 
 
