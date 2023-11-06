@@ -3,3 +3,45 @@
     max-width: 200px;
     display: flex;
 }
+
+.name {
+    position: relative;
+    transition: var(--transition);
+}
+
+
+
+.editBtn {
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(80%, -100%);
+    transition: var(--transition);
+}
+
+
+
+.editIcon {
+    width: clamp(10px, 3vw, 20px);
+    height: clamp(10px, 3vw, 20px);
+    fill: #fff;
+    opacity: 0.1;
+    transition: var(--transition);
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .editIcon {
+        opacity: .5;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .name:hover .editBtn {
+        transform: translate(100%, -130%);
+    }
+
+    .name:hover .editIcon {
+        opacity: 1;
+    }
+}

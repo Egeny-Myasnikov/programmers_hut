@@ -15,10 +15,10 @@ import { InputPhoneMask } from '@/app/components/UI/InputPhoneMask'
 
 export const HiroBlock = () => {
     const [message, setMessage] = useState('')
-    const [value, setValue] = useState(null)
-    const [currency, setCurrency] = useState(null)
-    const [phone, setPhone] = useState(null)
-    const [typeSite, setTypeSite] = useState(null)
+    const [value, setValue] = useState('')
+    const [currency, setCurrency] = useState('')
+    const [phone, setPhone] = useState('')
+    const [typeSite, setTypeSite] = useState('')
     const typeSitesOptions = typeSites
 
     return (
@@ -81,10 +81,10 @@ export const HiroBlock = () => {
                     onClick={() => {
                         setMessage(`Данные отправлены`)
                         setTimeout(() => {
-                            setCurrency(null)
-                            setPhone(null)
-                            setTypeSite(null)
-                            setMessage(null)
+                            setCurrency('')
+                            setPhone('')
+                            setTypeSite('')
+                            setMessage('')
                         }, 3000)
 
                     }}>Отправить</MyButton>

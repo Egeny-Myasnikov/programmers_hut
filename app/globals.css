@@ -66,9 +66,17 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+input {
   color: inherit;
+  background: transparent;
+  border: none;
 }
+
+button {
+  cursor: pointer;
+}
+
 
 li {
   list-style: none;

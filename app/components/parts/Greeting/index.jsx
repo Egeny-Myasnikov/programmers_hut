@@ -2,11 +2,16 @@
 import { useLayoutEffect, useState } from "react"
 import { MyField } from "../../UI/MyField"
 import s from './style.module.css'
+import { SVGSprite } from "../../UI/SVGSprite"
 
 export const Greeting = ({ }) => {
     const [value, setValue] = useState('')
     const [name, setName] = useState('')
-
+    const removeNameFromLS = () => {
+        const ls = localStorage
+        ls.removeItem('userName')
+        setName('')
+    }
     useLayoutEffect(() => {
         const ls = localStorage
         const userName = ls.getItem('userName')
@@ -15,18 +20,34 @@ export const Greeting = ({ }) => {
             return
         }
         ls.setItem('userName', name)
-
     }, [name])
-
-
 
     return (
         <>
             {
-                name !== '' ?
-                    name
+                name !== '' ? (
+                    <>
+                        <p className={s.name}>
+                            {name}
+                            <button title="Изменить имя" className={`${s.editBtn} linkTitle`} onClick={removeNameFromLS}>
+                                <SVGSprite className={s.editIcon} id={'edit'} />
+                            </button>
+                        </p>
+                    </>
+                )
                     : (
-                        <MyField classNameLabel={s.field} value={value} onBlur={() => setName(value)} onChange={(e) => setValue(e.target.value)} placeholder='Введите имя' />
+                        <MyField
+                            onChange={(e) => setValue(e.target.value)}
+                            onBlur={() => setName(value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    setName(value)
+                                }
+                            }}
+                            value={value}
+                            classNameLabel={s.field}
+                            placeholder='Введите имя'
+                        />
                     )
             }
         </>

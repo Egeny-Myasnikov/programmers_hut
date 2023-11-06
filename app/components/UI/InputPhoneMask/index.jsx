@@ -5,7 +5,7 @@ import { MyField } from "../MyField"
 
 export const InputPhoneMask = ({ setPhone, labelText, placeholder }) => {
 
-    const [value, setValue] = useState(null)
+    const [value, setValue] = useState('')
 
     const getInputValues = (input) => input.value.replace(/\D/g, "")
 
