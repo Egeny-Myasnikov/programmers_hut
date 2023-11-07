@@ -4,12 +4,12 @@ import { MySlider } from '../../MySlider'
 import { SVGSprite } from '../../SVGSprite'
 import s from './style.module.css'
 import Link from 'next/link'
-import { useContext, useEffect, useLayoutEffect, useRef } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ContextModaWindow } from '@/app/providers/ProjectCardsProvider'
 
 
-export const ProjectCard = ({ projectImg, projectTitle, cost, period, description, links }) => {
+export const ProjectCard = ({ type, projectImg, projectTitle, cost, period, description, links }) => {
     const [ModaWindow, setModaWindow, isOpen, setOpen] = useContext(ContextModaWindow)
     const cardRef = useRef()
     const setImagesToModalWindow = () => {
@@ -21,10 +21,10 @@ export const ProjectCard = ({ projectImg, projectTitle, cost, period, descriptio
             opacity: 0,
         }, {
             opacity: 1,
-            duration: 1,
+            duration: .2,
             ease: 'sine',
         })
-    })
+    }, [type])
 
     return (
         <div className={`${s.projectCard}`} ref={cardRef} >
@@ -40,6 +40,7 @@ export const ProjectCard = ({ projectImg, projectTitle, cost, period, descriptio
             <div className={s.info}>
                 <h2 className={s.projectTitle}> {projectTitle}</h2>
                 <ul className={s.list}>
+                    <li className={s.item}><span className={s.itemOptions}>Тип сайта:</span> <span>{type}</span></li>
                     <li className={s.item}><span className={s.itemOptions}>Цена:</span> <span>{formatToRU.format(cost)}</span></li>
                     <li className={s.item}><span className={s.itemOptions}>Срок разработки:</span> <span>{period}</span></li>
                     <li className={s.item}><span className={s.itemOptions}>Описание:</span> <span>{description}

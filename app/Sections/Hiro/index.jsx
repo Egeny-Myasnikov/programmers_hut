@@ -14,6 +14,7 @@ import { InputPhoneMask } from '@/app/components/UI/InputPhoneMask'
 
 
 export const HiroBlock = () => {
+    const TIMING = 3000
     const formRef = useRef(null)
     const [message, setMessage] = useState('')
     const [isErrorMessage, setIsErrorMessage] = useState(true)
@@ -25,29 +26,30 @@ export const HiroBlock = () => {
     const typeSitesOptions = typeSites
 
     const sendData = () => {
+
         if (typeSite === '') {
             setMessage('Выберете тип сайта!')
             setTimeout(() => {
                 setMessage('')
-            }, 3000)
+            }, TIMING)
             return
         }
         if (currency === '' || currency === 'не число ₽') {
             setMessage('Укажите бюджет!')
             setTimeout(() => {
                 setMessage('')
-            }, 3000)
+            }, TIMING)
             return
         }
         if (phone === '' || errorPhone) {
             setMessage('Укажите номер телефона!')
             setTimeout(() => {
                 setMessage('')
-            }, 3000)
+            }, TIMING)
             return
         }
         setIsErrorMessage(false)
-        setMessage('Данные отправлены!')
+        setMessage('Данные отправлены! Ожидайте звонка.')
 
         setTimeout(() => {
             setTypeSite('')
@@ -56,7 +58,7 @@ export const HiroBlock = () => {
             setPhone('')
             setMessage('')
             setIsErrorMessage(true)
-        }, 3000)
+        }, TIMING)
     }
 
     return (
@@ -114,7 +116,7 @@ export const HiroBlock = () => {
                                 <div>Телефон: <span className={s.options}>{phone || "Нет телефона"}</span></div>
                             </div>
                         ) :
-                        <span className={`${s.message} ${isErrorMessage ? s.messageError : s.messageAllowed} `}>{message}</span>
+                        <span style={{ '--timing': `${TIMING}ms` }} className={`${s.message} ${isErrorMessage ? s.messageError : s.messageAllowed} `}>{message}</span>
 
 
                 }
