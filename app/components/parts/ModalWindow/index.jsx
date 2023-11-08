@@ -8,10 +8,10 @@ export const ModalWindow = () => {
     const [ModaWindow, setModaWindow, isOpen, setOpen] = useContext(ContextModaWindow)
 
     const closeModal = (e) => {
-        e.stopPropagation()
-        e.preventDefault()
         if (e.target.classList.contains('modalOverlay')) {
             setOpen(false)
+            e.stopPropagation()
+            e.preventDefault()
         }
     }
     return (
@@ -21,7 +21,7 @@ export const ModalWindow = () => {
                     <div
                         onClickCapture={closeModal}
                         className={`${s.overlay} modalOverlay`}>
-                        <div className={`${s.popup}`}>
+                        <div className={s.popup}>
                             <div className={s.popupContent}>
                                 <MySlider images={ModaWindow} />
                             </div>
