@@ -8,6 +8,12 @@
     gap: 10px;
 }
 
+.btnFilterActive {
+    background-size: 100% 100%;
+    transition: var(--transition);
+    text-decoration: underline;
+}
+
 @media (max-width: 700px) {
     .filterLst {
         flex-direction: column;
@@ -17,4 +23,5 @@
     .btnFilter {
         width: 100%;
     }
+
 }

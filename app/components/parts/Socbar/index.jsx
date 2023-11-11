@@ -15,9 +15,28 @@ export const Socbar = ({ headerVisible }) => {
 
     const toggleSocIcons = () => {
         setSocIconsVisible(!socIconsVisible)
-
-        console.log(headerVisible)
     }
+    useEffect(() => {
+        if (headerVisible) {
+            if (!socIconsVisible) {
+                setSocIconsVisible(true)
+            }
+        }
+        if (!headerVisible) {
+            if (socIconsVisible) {
+                setSocIconsVisible(false)
+            }
+        }
+        document.addEventListener('click', (e) => {
+            if (!e.target.classList.contains(s.socIconsBtn) && !e.target.classList.contains('style_toggleBtn__oUXb6')) setSocIconsVisible(false)
+        })
+        return () => {
+            document.removeEventListener('click', (e) => {
+                if (!e.target.classList.contains(s.socIconsBtn) && !e.target.classList.contains('style_toggleBtn__oUXb6')) setSocIconsVisible(false)
+            })
+        }
+    }, [headerVisible])
+
 
 
 
@@ -36,16 +55,19 @@ export const Socbar = ({ headerVisible }) => {
                     links.map(({ icon, link, linkName }) => (
                         <Link
                             className={` ${s.btn}
-                ${s.socIconsLinks}
-                ${socIconsVisible ? s.socIconsLinksActive : ''} linkTitle`}
+                                        ${s.socIconsLinks}
+                                        ${socIconsVisible ? s.socIconsLinksActive : ''} linkTitle
+                                      `}
+                            target='_blank'
                             title={linkName}
                             href={link}
                             key={link}
                         >
                             <SVGSprite
                                 className={`${s.icon} 
-                                ${s.socIconsIcon} 
-                                ${socIconsVisible ? s.socIconsIconActive : ''}`}
+                                            ${s.socIconsIcon} 
+                                            ${socIconsVisible ? s.socIconsIconActive : ''}
+                                          `}
                                 id={icon} />
                         </Link>
                     ))
