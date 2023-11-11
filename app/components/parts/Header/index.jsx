@@ -16,7 +16,7 @@ export const Header = () => {
                 >
                 </button>
                 <Logo className={s.titleBlock} />
-                <Socbar />
+                <Socbar headerVisible={visible} />
                 <Navbar />
             </div>
         </header>

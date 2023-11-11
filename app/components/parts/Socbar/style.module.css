@@ -6,117 +6,176 @@
     align-items: flex-start;
 }
 
-.icoBtn {
-    position: relative;
-    cursor: pointer;
+.btn {
+    --btnSize: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: var(--btnSize);
+    height: var(--btnSize);
     background: rgba(255, 255, 255, .3);
     border-radius: 50%;
-    border: none;
     box-shadow: var(--shadow);
     transition: var(--transition);
 }
 
-
-
-.ico {
-    width: 30px;
-    height: 30px;
+.icon {
+    width: 70%;
+    height: 70%;
     fill: rgba(255, 255, 255, .7);
     overflow: visible;
     transition: var(--transition);
 }
 
 
-
-.socbarBtn {
-    position: relative;
+/* phoneText */
+.phoneText {
+    overflow: hidden;
+    height: 100%;
+    text-align: center;
     display: flex;
-    justify-content: center;
     align-items: center;
-    transition: var(--transition);
-}
-
-.socbarBtn::before {
-    --color: rgba(255, 255, 255, 0.7);
-    content: '';
-    width: 7px;
-    height: 7px;
     position: absolute;
-    background: var(--color);
-    box-shadow: -13px 0px 0px var(--color), 13px 0px 0px var(--color);
-    border-radius: 50%;
-    transition: var(--transition);
-}
-
-
-
-.socbarBtn::after {
-    cursor: default;
-    content: '';
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: -1;
-    display: none;
-}
-
-.socbar {
-    display: flex;
-    gap: 10px;
-    position: absolute;
+    left: 100%;
     top: 50%;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
+    transform: translateY(-50%);
     transition: var(--transition);
-    background: rgba(var(--color-green-dark--rgb), .7);
-    padding: 20px 20px 20px 15px;
-    border-radius: 0px 5px 5px 0px;
-    transform: translate(-100%, -100%) scale(0);
-
 }
 
-.socbar.visible+.socbarBtn::after {
-    display: block;
-}
-
-.socbar.visible+.socbarBtn::before {
-    box-shadow: -9px 6px 0px var(--color),
-        -9px -6px 0px var(--color);
-    width: 20px;
-    height: 2px;
-    right: 7px;
-}
-
-.socbar.visible {
+.phoneTextVisible {
     opacity: 1;
-    visibility: visible;
-    transform: translate(38.5%, -100%) scale(1);
+    letter-spacing: 2px;
+    width: 450%;
+    padding-left: 20px;
+    transition: var(--transition);
+    transition-delay: padding 1s;
 }
+
+
+
+.phoneTextHidden {
+    opacity: 0;
+    letter-spacing: -9.5px;
+    width: 0;
+    padding-left: 0px;
+    transition: var(--transition);
+    transition-delay: padding 1s;
+}
+
+/*  */
+
+/* socIcons */
+.socIconsBtn {
+    position: relative;
+    gap: 4px;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.socIconsBtnActive::before,
+.socIconsBtnActive::after {
+    content: '';
+    background: rgba(var(--color-blue-light--rgb), 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    transform: translate(50%, calc(var(--btnSize) / 2)) rotate(0deg);
+}
+
+
+
+.socIconsBtnActive::before {
+    animation: socIconsBtnActiveBefore .8s 1s alternate forwards linear;
+}
+
+.socIconsBtnActive::after {
+    animation: socIconsBtnActiveAfter .8s 1s alternate forwards linear;
+}
+
+
+
+.socIconsLinks {
+    --iconsLinksSize: 7px;
+    --iconsLinksBg: rgba(255, 255, 255, .7);
+    z-index: -1;
+    width: var(--iconsLinksSize);
+    height: var(--iconsLinksSize);
+    background: var(--iconsLinksBg);
+}
+
+.socIconsLinksActive {
+    --iconsLinksSize: var(--btnSize);
+    --iconsLinksBg: rgba(var(--color-green-light--rgb), 1);
+}
+
+.socIconsLinksActive:nth-child(1) {
+    transform: translateX(250%);
+    transition: width .4s .6s ease-in-out, height .4s .6s ease-in-out, transform .4s .2s ease-in-out, background .4s .2s ease-in-out;
+}
+
+.socIconsLinksActive:nth-child(2) {
+    transform: translateX(280%);
+    transition: width .4s .5s ease-in-out, height .4s .5s ease-in-out, transform .4s .1s ease-in-out, background .4s .2s ease-in-out;
+}
+
+.socIconsLinksActive:nth-child(3) {
+    transform: translateX(310%);
+    transition: width .4s .4s ease-in-out, height .4s .4s ease-in-out, transform .4s ease-in-out, background .4s .2s ease-in-out;
+}
+
+.socIconsIcon {
+    --iconSize: 0;
+    --iconBg: rgba(255, 255, 255, 1);
+    width: var(--iconSize);
+    height: var(--iconSize);
+    fill: var(--iconBg);
+}
+
+.socIconsIconActive {
+    --iconSize: 30px;
+}
+
+.socIconsIconActive:nth-child(1) {
+    transition-delay: .5s;
+}
+
+.socIconsIconActive:nth-child(2) {
+    transition-delay: .4s;
+}
+
+.socIconsIconActive:nth-child(3) {
+    transition-delay: .3s;
+}
+
+/*  */
+
 
 @media (hover: hover) {
-    .icoBtn:hover {
+    .phoneTextVisible:hover {
+        letter-spacing: 2.5px;
+    }
+
+    .btn:hover {
         background: rgba(255, 255, 255, .7);
         transition: var(--transition);
     }
 
-
-    .icoBtn:hover .ico {
+    .btn:hover .icon {
         fill: rgba(var(--color-green-light--rgb), 1);
     }
 
+    .socIconsBtn:hover {
+        background: rgba(255, 255, 255, .3);
+    }
 
-    .socbarBtn:hover::before {
-        --color: rgba(var(--color-green-light--rgb), 1);
+    .socIconsBtn:hover .socIconsLinks {
+        --iconsLinksBg: rgba(var(--color-green-light--rgb), 1);
+    }
 
+    .socIconsBtnActive:hover .icon {
+        fill: rgba(255, 255, 255, 1);
     }
 }
 
@@ -128,15 +187,6 @@
         align-items: center;
     }
 
-    .socbar {
-        transform: translate(90%, 0%) scale(0);
-        border-radius: 5px;
-    }
-
-    .socbar.visible {
-        transform: translate(90%, -140%) scale(1);
-    }
-
     .ico {
         width: 30px;
         height: 30px;
@@ -145,6 +195,14 @@
     .icoBtn {
         width: 45px;
         height: 45px;
+    }
+
+    .socIconsBtnActive {
+        transform: rotate(-90deg);
+    }
+
+    .socIconsIconActive {
+        transform: rotate(90deg);
     }
 }
 
@@ -164,11 +222,44 @@
         width: 40px;
         height: 40px;
     }
+}
 
-    .socbarBtn::before {
-        width: 5px;
-        height: 5px;
+@keyframes socIconsBtnActiveAfter {
+    0% {
+        width: 0;
+        height: 0px;
+        transform: translate(50%, calc(var(--btnSize) / 2)) rotate(0deg);
+    }
 
-        box-shadow: -10px 0px 0px var(--color), 10px 0px 0px var(--color);
+    50% {
+        width: 50%;
+        height: 2px;
+        transform: translate(50%, calc(var(--btnSize) / 2)) rotate(0deg);
+    }
+
+    100% {
+        width: 50%;
+        height: 2px;
+        transform: translate(50%, calc(var(--btnSize) / 2)) rotate(-45deg);
+    }
+}
+
+@keyframes socIconsBtnActiveBefore {
+    0% {
+        width: 0;
+        height: 0px;
+        transform: translate(50%, calc(var(--btnSize) / 2)) rotate(0deg);
+    }
+
+    50% {
+        width: 50%;
+        height: 2px;
+        transform: translate(50%, calc(var(--btnSize) / 2)) rotate(0deg);
+    }
+
+    100% {
+        width: 50%;
+        height: 2px;
+        transform: translate(50%, calc(var(--btnSize) / 2)) rotate(45deg);
     }
 }
